@@ -1,0 +1,169 @@
+default: &DEFAULT
+  root_data_folder: "/home/empeor/Desktop/dl_project/deeplearningfypproject/Data"
+  audio_data_root_location: "/home/empeor/Desktop/dl_project/deeplearningfypproject/Data/genres_original"
+
+  splitIntoChunksNumber: null
+
+extract_RawResampledAudio:
+  <<: *DEFAULT
+  destination_folder_name: "rawAudio_Resampled"
+
+  isExtractingRawMelSpectogram: False
+
+  new_sr: 22050
+
+  splitIntoChunksNumber: 10
+
+  standardLengthPerSong: 617400
+
+
+extract_RawMelSpectrograms_1024:
+  <<: *DEFAULT
+  destination_folder_name: "rawMelSpectograms_DefaultSpecs_1024"
+
+  isExtractingRawMelSpectogram: True
+
+  n_fft: 1024
+  hop_length: 512
+  win_length: 1024
+  num_mels: 128
+  new_sr: 22050
+  standardLengthPerSong: 1216
+
+extract_RawMelSpectrograms_512:
+  <<: *DEFAULT
+  destination_folder_name: "rawMelSpectograms_DefaultSpecs_512"
+
+  isExtractingRawMelSpectogram: True
+
+  n_fft: 512
+  hop_length: 256
+  win_length: 512
+  num_mels: 128
+  new_sr: 22050
+  standardLengthPerSong: 2432
+
+extract_RawMelSpectrograms_256:
+  <<: *DEFAULT
+  destination_folder_name: "rawMelSpectograms_DefaultSpecs_256"
+
+  isExtractingRawMelSpectogram: True
+
+  n_fft: 256
+  hop_length: 128
+  win_length: 256
+  num_mels: 128
+  new_sr: 22050
+  standardLengthPerSong: 4864
+
+extract_RawMelSpectrograms_DifferentParams:
+  <<: *DEFAULT
+  destination_folder_name: "rawMelSpectograms_DiffParams1"
+
+  isExtractingRawMelSpectogram: True
+
+  n_fft: 400
+  hop_length: 160
+  win_length: 400
+  num_mels: 64
+  new_sr: 8000
+  standardLengthPerSong: 1280
+
+extract_RawMelSpectrograms_DifferentParams2:
+  <<: *DEFAULT
+  destination_folder_name: "rawMelSpectograms_DiffParams2"
+  n_fft: 400
+  hop_length: 160
+  win_length: 400
+  num_mels: 64
+  new_sr: 22050
+  standardLengthPerSong: 3840
+
+extract_RawMelSpectrograms_augmented_1024:
+  <<: *DEFAULT
+  destination_folder_name: "rawMelSpectograms_DefaultSpecs_augmented_1024"
+
+  isExtractingRawMelSpectogram: True
+
+  n_fft: 1024
+  hop_length: 512
+  win_length: 1024
+  num_mels: 128
+  new_sr: 22050
+  standardLengthPerSong: 1216
+  splitIntoChunksNumber: 8
+
+extract_RawMelSpectrograms_augmented_512:
+  <<: *DEFAULT
+  destination_folder_name: "rawMelSpectograms_DefaultSpecs_augmented_512"
+
+  isExtractingRawMelSpectogram: True
+
+  n_fft: 512
+  hop_length: 256
+  win_length: 512
+  num_mels: 128
+  new_sr: 22050
+  standardLengthPerSong: 2432
+  splitIntoChunksNumber: 8
+
+extract_RawMelSpectrograms_augmented_256:
+  <<: *DEFAULT
+  destination_folder_name: "rawMelSpectograms_DefaultSpecs_augmented_256"
+
+  isExtractingRawMelSpectogram: True
+
+  n_fft: 256
+  hop_length: 128
+  win_length: 256
+  num_mels: 128
+  new_sr: 22050
+  standardLengthPerSong: 4864
+  splitIntoChunksNumber: 8
+
+extract_RawMelSpectrograms_DifferentParams_augmented:
+  <<: *DEFAULT
+  destination_folder_name: "rawMelSpectograms_DiffParams1_augmented"
+
+  isExtractingRawMelSpectogram: True
+
+  n_fft: 400
+  hop_length: 160
+  win_length: 400
+  num_mels: 64
+  new_sr: 8000
+  standardLengthPerSong: 1280
+
+  splitIntoChunksNumber: 8
+
+extract_RawMelSpectrograms_DifferentParams2_augmented:
+  <<: *DEFAULT
+  destination_folder_name: "rawMelSpectograms_DiffParams2_augmented"
+
+  isExtractingRawMelSpectogram: True
+
+  n_fft: 400
+  hop_length: 160
+  win_length: 400
+  num_mels: 64
+  new_sr: 22050
+  standardLengthPerSong: 3840
+
+  splitIntoChunksNumber: 8
+
+extract_RawMelSpectrograms_DifferentParams3_augmented:
+  <<: *DEFAULT
+  destination_folder_name: "rawMelSpectograms_DiffParams3_augmented"
+
+  isExtractingRawMelSpectogram: True
+
+  n_fft: 2048
+  hop_length: 512
+  win_length: 2048
+  num_mels: 128
+  new_sr: 22050
+  standardLengthPerSong: 1160
+
+  splitIntoChunksNumber: 8
+
+

@@ -1,0 +1,18 @@
+default: &DEFAULT
+  root_data_folder: "/home/empeor/Desktop/dl_project/deeplearningfypproject/Data"
+  audio_data_root_location: "/home/empeor/Desktop/dl_project/deeplearningfypproject/Data/genres_original"
+
+  splitIntoChunksNumber: null
+
+extract_RawMelSpectrograms:
+  <<: *DEFAULT
+  destination_folder_name: "rawMelSpectograms_DefaultSpecs"
+
+  isExtractingRawMelSpectogram: True
+
+  n_fft: 1024
+  hop_length: 512
+  win_length: 1024
+  num_mels: 128
+  new_sr: 22050
+  standardLengthPerSong: 1024
